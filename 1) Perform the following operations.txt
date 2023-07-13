@@ -1,0 +1,50 @@
+1) Perform the following operations to provide the implementation for a
+Rectangle class. The operations are:
+1. Add an area() method to the Rectangle class.
+2. Create a Square class that satisfies the following conditions:
+○ It is a subclass of Rectangle.
+○ It contains a constructor and no other methods.
+○ It can use the Rectangle class' area method to print the area
+of a Square object.
+
+
+
+ANS:
+
+
+// Rectangle class
+class Rectangle
+ {
+  constructor(length, width)
+ {
+    this.length = length;
+    this.width = width;
+  }
+
+
+  area()
+ {
+    return this.length * this.width;
+  }
+}
+
+
+// Square class (subclass of Rectangle)
+class Square extends Rectangle
+ {
+  constructor(side)
+ {
+    super(side, side);         // Call the parent class constructor with the side value for both length and width
+  }
+}
+
+
+
+// Example usage
+let rectangle = new Rectangle(4, 6);
+console.log("Rectangle Area: " + rectangle.area()); // Output: 24
+
+
+
+let square = new Square(5);
+console.log("Square Area: " + square.area()); // Output: 25
